@@ -1,7 +1,7 @@
 titre: "PortFolio de Guillaume Lenormand "
 Sommaire:
-    - nom: Accueil
-    - nom: Compétences
-    - nom: Réalisations
-    - nom: Formation
-    - nom: Contact
+    - Accueil: Accueil
+    - Compétences: Compétences
+    - Réalisations: Réalisations
+    - Formation: Formation
+    - Contact: Contact

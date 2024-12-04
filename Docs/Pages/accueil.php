@@ -17,10 +17,14 @@ foreach($data["accueil"]As $accueil){
 
 echo "<h3>Compétences</h3>\n";
 foreach($data["compétences"]As $compétences){
-    echo"<p>".ucfirst($compétences["développement"]).":".$compétences["html"].":".$Accroche["Niveau html"].":".$Accroche["css"].":".$compétences["Niveau css"].":".$compétences["php"].":".$Accroche["Niveau php"].":".$Accroche["sql"].":".$Accroche["Niveau sql"].":".$Accroche["sql"]."</p>\n";
+    echo"<p>".ucfirst($compétences["développement"]).":".$compétences["html"].":".$Accroche["Niveau html"].":".$Accroche["css"].":".$compétences["Niveau css"].":".$compétences["php"].":".$Accroche["Niveau php"].":".$Accroche["sql"].":".$Accroche["Niveau sql"]."</p>\n";
+    echo"<p>".ucfirst($compétences["bureautique"]).":".$compétences["Excel"].":".$Accroche["Niveau excel"].":".$Accroche["power point"].":".$compétences["word"].":".$compétences["niveau word"]."</p>\n";
 }
 
-
+echo "<h3>Réalisation</h3>\n";
+foreach($data["réalisation"]As $réalisation){
+    echo"<p>".ucfirst($réalisation["Slam"]).":".$Accroche["description slam"].":".$Accroche["illustration slam"]."</p>\n";
+}
 
 
 

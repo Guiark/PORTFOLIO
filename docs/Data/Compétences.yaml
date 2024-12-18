@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 développement:
   HTML:
     niveau: "Débutant"
@@ -22,35 +21,3 @@ bureautique:
     niveau: "à revoir"
 
 
-=======
-competences:
-  nom: html
-    niveau: une 1/2 sur 6 etoile mais en upgrade
-
-
-
-
-
-Développement : développement
-    -Html : html
-    -Niveau html : une 1/2 sur 6 etoile mais en upgrade
-
-    -CSS : css
-    -Niveau css : une 1/2 sur 6 etoile mais en upgrade
-
-    -PHP : php
-    -Niveau php : une 1/2 sur 6 etoile mais en upgrade
-
-    -SQL : sql 
-    -Niveau sql : une 1/2 sur 6 etoile mais en upgrade
-
-Bureautique : bureautique
-    -Excel : Excel
-    -Niveau excel : 3 etoiles sur 6 
-
-    -Power Point : Power Point 
-    -Niveau Power Point : 3 etoiles sur 6 
-
-    -Word : Word
-    -Niveau Word : 4 etoiles sur 6
->>>>>>> 147535a68a85fc7f7e282620fcd9ca7af1b0f106

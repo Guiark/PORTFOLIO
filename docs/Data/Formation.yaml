@@ -1,17 +1,17 @@
 formation:
-  - diplome: "Brevet des collège"
+  - diplome: "Brevet des collèges"
     etablissement: "Collège du Sacré Coeur"
     lieu: "Caen, France"
     annee_debut: 2015
     annee_fin: 2019
-    description: "Acquisition simplement du brevet du collège avec mention assez bien."
+    description: "Acquisition du brevet des collèges avec mention assez bien."
     cours_principaux: 
       - "Français"
       - "Histoire & Géographie"
-      - "Mathématqiue"
+      - "Mathématiques"
       - "Physique"
+    illustration: "../images/Formation/College_Sacre_Coeur.png" 
 
-formation:
   - diplome: "STMG"
     etablissement: "Lycée Saint-Ursule"
     lieu: "Caen, France"
@@ -25,9 +25,9 @@ formation:
       - "Français"
       - "EMC"
       - "Mathématique"
+    illustration: "../images/Formation/Lycee_Sainte-Ursule.png" 
 
 
-formation:
   - diplome: "Bac Pro Logistique"
     etablissement: "Lycée Saint-Ursule"
     lieu: "Caen, France"
@@ -40,8 +40,8 @@ formation:
       - "Mathématqiue"
       - "Histoire & Geographique"
       - "PSE"
+    illustration: "../images/Formation/Lycee_Sainte-Ursule.png"
 
-formation:
   - diplome: "BTS SIO"
     etablissement: "Caen Sup Saint-Ursule"
     lieu: "Caen, France"
@@ -54,37 +54,5 @@ formation:
       - "Culture Génerale"
       - "Mathématique"
       - "Cybersecurité"
+    illustration: "../images/Formation/Caen_Sup.png"
 
-
-
-
-
-
-
-
-
-
-
-
-
-  - diplome: ""
-    etablissement: ""
-    lieu: "Caen, France"
-    annee_debut: 2019
-    annee_fin: 2021
-    description: "J'ai changer de fillière après cette année"
-
-  - diplome: "Bac Pro Logistique"
-    etablissement: "Lycée Saint-Ursule"
-    lieu: "Caen, France"
-    annee_debut: 2021
-    annee_fin: 2024
-    description: "Apprentissage d'une nouvelle fillière."
-  
-  - diplome: "BTS SIO"
-    specialisation: "SLAM"
-    etablissement: "Caen SUP Saint-Ursule"
-    lieu: "Caen, France"
-    annee_debut: 2024
-    annee_fin: ....
-    description: "Je sort de ma zone de confort ."

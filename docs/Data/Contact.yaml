@@ -1,8 +1,50 @@
-Formulaire de contact:
-  -Votre Nom de famille : 
-  -Votre adresse mail :
-  -Objet du mail :
-  -Contenu du message :
-  -Captcha pour éviter les robots :
- Envoi d’un mail vers lenormand.guil@gmail.com
- 
+contact:
+  formulaire:
+    - champ:
+        nom: "Nom de l'expéditeur"
+        type: "texte"
+        obligatoire: true
+        placeholder: "Entrez votre nom complet"
+    - champ:
+        nom: "Adresse de courriel de l'expéditeur"
+        type: "email"
+        obligatoire: true
+        placeholder: "exemple@domaine.com"
+    - champ:
+        nom: "Objet du message"
+        type: "texte"
+        obligatoire: true
+        placeholder: "Indiquez l'objet de votre message"
+    - champ:
+        nom: "Contenu du message"
+        type: "texte-long"
+        obligatoire: true
+        placeholder: "Écrivez ici votre message..."
+    - champ:
+        nom: "Captcha"
+        type: "captcha"
+        obligatoire: true
+        description: "Veuillez résoudre le captcha pour prouver que vous êtes humain"
+  
+  envoi_mail:
+    destinataire: "votre-adresse@email.com"
+    sujet_defaut: "Nouveau message via le formulaire de contact"
+    corps_defaut: |
+      Vous avez reçu un nouveau message depuis le formulaire de contact :
+      
+      - **Nom**: {{ nom }}
+      - **E-mail**: {{ email }}
+      - **Objet**: {{ objet }}
+      - **Message**: 
+      
+      {{ message }}
+      
+      Veuillez ne pas répondre à cet e-mail, il a été généré automatiquement.
+    options:
+      envoyer_confirmation_utilisateur: true
+      message_confirmation_utilisateur: |
+        Bonjour {{ nom }},
+        
+        Nous avons bien reçu votre message. Nous vous répondrons dans les plus brefs délais.
+        
+        Merci de nous avoir contactés !

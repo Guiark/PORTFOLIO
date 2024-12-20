@@ -1,4 +1,12 @@
-- titre: "Projet de Bloc 1 Slam"
-    description: "Création de plusieur petit projet en Slam ."
-    illustration: ""
-    document: 
+realisations:
+  - titre: "Bloc 1 Slam"
+    description: "Travaille sur différent TD "
+    illustration: "https://guiark.github.io/Bloc1/"
+    documents: 
+      - type: "Calculatrice"
+        description: "Calculatrice faite pour calculer"
+        lien: "https://guiark.github.io/Bloc1/pages/TD4/Calculatrice.html"
+      - type: "Capture d'écran"
+        description: "Mon code en Java Script"
+        lien: "https://github.com/Guiark/Bloc1/blob/main/docs/js/TD4/calculatrice.js"
+

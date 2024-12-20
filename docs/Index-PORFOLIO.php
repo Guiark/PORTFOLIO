@@ -1,11 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="Style/PortFolio.css">
+</head>
+<body>
 <?php
+require_once("YAML/yaml.php");
+?>
 
-#require_once '../Docs/Pages/accueil.php'; // On inclut le fichier de configuration (uniquement 1 fois)
-#include '../Docs/Pages/accueil.php';      // On inclut l'en-tête HTML
-#include 'menu.php';        // On inclut un menu de navigation
-
-echo "je teste un truc laisse moi";
-
-#include 'footer.php';      // On inclut le pied de page
-
-
+<header>
+    <h1>Mon Portfolio</h1>
+    
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#competences">Compétences</a>
+        <a href="#formation">Formation</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#contact">Contact</a>
+        </nav>
+        </header>
+        </body>
+</html>

@@ -1,120 +1,107 @@
 <?php
-
-// Activer l'affichage des erreurs PHP
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
-// Charger et parser le fichier YAML
-$data = file_get_contents('Data/Contact.yaml');
-
-
-// Fonction pour envoyer un e-mail
-function envoyer_email($destinataire, $sujet, $message, $headers) {
-    return mail($destinataire, $sujet, $message, $headers);
-}
-
-// Valider les champs du formulaire
-function valider_formulaire($data, $form_fields) {
-    $errors = [];
-    foreach ($form_fields as $field) {
-        $field_name = $field['champ']['nom'];
-        $obligatoire = $field['champ']['obligatoire'];
-        $type = $field['champ']['type'];
-
-        // Vérification des champs obligatoires
-        if ($obligatoire && empty($data[$field_name])) {
-            $errors[] = "Le champ '$field_name' est obligatoire.";
-        }
-
-        // Vérification du type (email par exemple)
-        if ($type == 'email' && !filter_var($data[$field_name], FILTER_VALIDATE_EMAIL)) {
-            $errors[] = "L'adresse e-mail '$field_name' est invalide.";
-        }
-    }
-    return $errors;
-}
-
-// Vérifier le captcha avec Google reCAPTCHA
-function verifier_recaptcha($captcha_response) {
-    $secret_key = '6LetEKQqAAAAAGP8aKSSlti4sHGOiz9pmWzcn8n5'; // Ta clé secrète reCAPTCHA
-    $remote_ip = $_SERVER['REMOTE_ADDR'];
-
-    // Construire l'URL de vérification
-    $url = 'https://www.google.com/recaptcha/api/siteverify';
-    $data = [
-        'secret' => $secret_key,
-        'response' => $captcha_response,
-        'remoteip' => $remote_ip
-    ];
-
-    // Faire la requête POST à Google
-    $options = [
-        'http' => [
-            'method' => 'POST',
-            'content' => http_build_query($data),
-            'header' => "Content-type: application/x-www-form-urlencoded\r\n"
-        ]
-    ];
-    $context = stream_context_create($options);
-    $response = file_get_contents($url, false, $context);
-
-    // Décoder la réponse JSON
-    $result = json_decode($response);
-    var_dump($result); // Vérifier la réponse de reCAPTCHA
-    return $result->success;
-}
-
 // Si le formulaire est soumis
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupérer les données du formulaire
-    $data = [
-        'Nom de l\'expéditeur' => $_POST['nom'],
-        'Adresse de courriel de l\'expéditeur' => $_POST['email'],
-        'Objet du message' => $_POST['objet'],
-        'Contenu du message' => $_POST['message'],
-        'Captcha' => $_POST['g-recaptcha-response'] // Captcha response venant de Google
-    ];
-    var_dump($_POST['g-recaptcha-response']);
-    // Vérifier si le captcha est valide
-    if (!verifier_recaptcha($data['Captcha'])) {
-        echo "<p style='color: red;'>La vérification du captcha a échoué. Veuillez réessayer.</p>";
-    } else {
-        // Valider les champs
-        $errors = valider_formulaire($data, $form_data['contact']['formulaire']);
-        var_dump($errors); // Vérifier si des erreurs de validation apparaissent
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $errors = [];
 
-        if (empty($errors)) {
-            echo "Formulaire valide, message envoyé.";
-        } else {
-            // Afficher les erreurs
-            foreach ($errors as $error) {
-                echo "<p style='color: red;'>$error</p>";
-            }
+    // Vérification des champs obligatoires
+    if (empty($_POST['nom'])) {
+        $errors[] = 'Le nom est obligatoire.';
+    }
+    if (empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $errors[] = 'L\'adresse e-mail est obligatoire et doit être valide.';
+    }
+    if (empty($_POST['objet'])) {
+        $errors[] = 'L\'objet est obligatoire.';
+    }
+    if (empty($_POST['message'])) {
+        $errors[] = 'Le message est obligatoire.';
+    }
+    
+    // Vérification du captcha reCAPTCHA
+    $recaptchaSecret = '6LdxUKQqAAAAALDfYBYkqL8UT9_IutVePEg8JM6O';
+    $recaptchaResponse = $_POST['g-recaptcha-response'];
+
+    $recaptchaVerification = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$recaptchaSecret&response=$recaptchaResponse");
+    $recaptchaData = json_decode($recaptchaVerification);
+
+    if (!$recaptchaData->success) {
+        $errors[] = 'La vérification CAPTCHA a échoué. Veuillez réessayer.';
+    }
+
+    // Si aucune erreur, envoyer l'email
+    if (empty($errors)) {
+        $nom = htmlspecialchars($_POST['nom']);
+        $email = htmlspecialchars($_POST['email']);
+        $objet = htmlspecialchars($_POST['objet']);
+        $message = nl2br(htmlspecialchars($_POST['message']));
+
+        $to = 'guillaume.lenormand@sts-sio-caen.info';
+        $subject = 'Nouveau message via le formulaire de contact';
+        $body = "
+        Vous avez reçu un nouveau message depuis le formulaire de contact :
+        
+        - **Nom**: $nom
+        - **E-mail**: $email
+        - **Objet**: $objet
+        - **Message**: 
+        $message
+        
+        Veuillez ne pas répondre à cet e-mail, il a été généré automatiquement.
+        ";
+        $headers = "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+        $headers .= "From: $email\r\n";
+
+        mail($to, $subject, $body, $headers);
+
+        // Envoi de la confirmation à l'utilisateur
+        if (isset($_POST['envoyer_confirmation_utilisateur']) && $_POST['envoyer_confirmation_utilisateur'] == '1') {
+            $confirmationMessage = "
+            Bonjour $nom,
+            
+            Nous avons bien reçu votre message. Nous vous répondrons dans les plus brefs délais.
+            
+            Merci de nous avoir contactés !
+            ";
+            mail($email, "Confirmation de réception", $confirmationMessage, $headers);
+        }
+
+        echo 'Message envoyé avec succès.';
+    } else {
+        echo 'Erreur(s) :<br>';
+        foreach ($errors as $error) {
+            echo "- $error<br>";
         }
     }
+    
 }
 
 ?>
 
-<!-- Formulaire HTML -->
 <form method="POST" action="">
-    <label for="nom">Nom de l'expéditeur</label>
-    <input type="text" name="nom" id="nom" required placeholder="Entrez votre nom complet">
+    <label for="nom">Nom de l'expéditeur:</label>
+    <input type="text" name="nom" id="nom" placeholder="Entrez votre nom complet" required><br>
 
-    <label for="email">Adresse de courriel de l'expéditeur</label>
-    <input type="email" name="email" id="email" required placeholder="exemple@domaine.com">
+    <label for="email">Adresse de courriel de l'expéditeur:</label>
+    <input type="email" name="email" id="email" placeholder="exemple@domaine.com" required><br>
 
-    <label for="objet">Objet du message</label>
-    <input type="text" name="objet" id="objet" required placeholder="Indiquez l'objet de votre message">
+    <label for="objet">Objet du message:</label>
+    <input type="text" name="objet" id="objet" placeholder="Indiquez l'objet de votre message" required><br>
 
-    <label for="message">Contenu du message</label>
-    <textarea name="message" id="message" required placeholder="Écrivez ici votre message..."></textarea>
+    <label for="message">Contenu du message:</label>
+    <textarea name="message" id="message" placeholder="Écrivez ici votre message..." required></textarea><br>
 
-    <!-- Ajouter le widget reCAPTCHA -->
-    <div class="g-recaptcha" data-sitekey="6LetEKQqAAAAAGP8aKSSlti4sHGOiz9pmWzcn8n5"></div>
+    <label for="rgpd">
+        <input type="checkbox" name="rgpd" id="rgpd" required>
+        Conformément au Règlement Général sur la Protection des Données (RGPD), les informations renseignées dans ce formulaire ne seront utilisées qu'à des fins de contact.
+    </label><br>
 
-    <input type="submit" value="Envoyer">
+    <div class="g-recaptcha" data-sitekey="6LdxUKQqAAAAAFzwBz3MaPfO19h2Kz41XTpxk75y"></div><br>
+
+    <input type="hidden" name="envoyer_confirmation_utilisateur" value="1"> <!-- Option d'envoyer confirmation à l'utilisateur -->
+    
+    <button type="submit">Envoyer</button>
 </form>
 
-<!-- Charger le script reCAPTCHA -->
+<!-- Inclusion du script reCAPTCHA -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>

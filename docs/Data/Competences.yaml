@@ -1,0 +1,23 @@
+développement:
+  HTML:
+    niveau: "Nouveau"
+  CSS:
+    niveau: "Nouveau"
+  PHP:
+    niveau: "Nouveau"
+  YAML:
+    niveau: "Nouveau"
+
+base de donnée:
+  mysql:
+    niveau: "Nouveau" 
+
+bureautique:
+  excel:
+    niveau: "Intermédiaire"
+  power point:
+    niveau: "Intermédiaire"
+  word:
+    niveau: "Intermédiaire"
+
+

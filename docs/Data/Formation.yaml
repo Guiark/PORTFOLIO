@@ -10,7 +10,7 @@ formation:
       - "Histoire & Géographie"
       - "Mathématiques"
       - "Physique"
-    illustration: "./Images/Formation/College_Sacre_Coeur.png" 
+    illustration: "./Images/Formation/college_sacre_coeur.png" 
 
   - diplome: "STMG"
     etablissement: "Lycée Saint-Ursule"
@@ -25,7 +25,7 @@ formation:
       - "Français"
       - "EMC"
       - "Mathématique"
-    illustration: "./Images/Formation/Lycee_Sainte-Ursule.png" 
+    illustration: "./Images/Formation/lycee_saint_ursule.png" 
 
 
   - diplome: "Bac Pro Logistique"
@@ -40,7 +40,7 @@ formation:
       - "Mathématqiue"
       - "Histoire & Geographique"
       - "PSE"
-    illustration: "../images/Formation/Lycee_Sainte-Ursule.png"
+    illustration: "./images/Formation/lycee_saint_ursule.png"
 
   - diplome: "BTS SIO"
     etablissement: "Caen Sup Saint-Ursule"
@@ -54,5 +54,5 @@ formation:
       - "Culture Génerale"
       - "Mathématique"
       - "Cybersecurité"
-    illustration: "../images/Formation/Caen_Sup.png"
+    illustration: "./images/Formation/caen_sup.png"
 

@@ -20,6 +20,9 @@ contact:
         type: "texte-long"
         obligatoire: true
         placeholder: "Écrivez ici votre message..."
+    -champ:
+        nom: "RGPD"
+        description: "Conformément au Règlement Général sur la Protection des Données (RGPD), les informations renseignées dans ce formulaire ne seront utilisées qu'à des fins de contact. Elles ne seront ni stockées, ni partagées, ni revendues. Une fois le message envoyé, aucune donnée ne sera conservée."
     - champ:
         nom: "Captcha"
         type: "captcha"

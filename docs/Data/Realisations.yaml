@@ -1,10 +1,10 @@
-realisations:
+realisations: Réalisation
   - titre: "Bloc 1 Slam"
     description: "Travaille sur différent TD "
     illustration: "https://guiark.github.io/Bloc1/"
     documents: 
       - type: "Calculatrice"
-        description: "Calculatrice faite pour calculer"
+        description: "Calculatrice faite en JS "
         lien: "https://guiark.github.io/Bloc1/pages/TD4/Calculatrice.html"
       - type: "Capture d'écran"
         description: "Mon code en Java Script"

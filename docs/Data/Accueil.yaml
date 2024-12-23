@@ -3,4 +3,4 @@ nom: Lenormand
 prenom: Guillaume
 description: |
   Salutation j'ai 19 ans et je suis actuellement en BTS SIO et j'aimerais devenir développeur de jeux video ou web
-image: "../images/Accueil/laphotodetoi.png"
+image: "./images/Accueil/guillaume.jpg"

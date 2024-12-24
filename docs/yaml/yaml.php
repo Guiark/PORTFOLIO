@@ -1,8 +1,8 @@
 <?php
 
-/*****************************************************
+/*
 https://symfony.com/doc/current/components/yaml.html
-******************************************************/
+**/
 
 require_once('vendor/autoload.php');
 use Symfony\Component\Yaml\Yaml;
@@ -16,12 +16,9 @@ if (!function_exists('yaml_parse_file')) {
         }
     }
 }
-
 function print_array($data){
-	echo "<pre>";
-	print_r($data);
-	echo "</pre>";
+    echo "<pre>";
+    print_r($data);
+    echo "</pre>";
 }
-
-
-?>
+?

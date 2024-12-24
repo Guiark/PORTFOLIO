@@ -1,5 +1,5 @@
 <?php
-use Symfony\Component\Yaml\Yaml;
+
 // Charger le fichier YAML
 $data = yaml_parse_file('Data\Competences.yaml');
 

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Portfolio</title>
-    <link rel="stylesheet" href="docs/Style/PortFolio.css">
+    <link rel="stylesheet" href="Style/PortFolio.css">
 </head>
 <body>
 <?php
-require_once("docs/yaml/yaml.php");
+require_once("yaml.php");
 ?>
 
 <header>
@@ -23,11 +23,11 @@ require_once("docs/yaml/yaml.php");
 </header>
 
 
-<?php include 'docs/Pages/accueil.php'; ?>
-<?php include 'docs/Pages/competences.php'; ?>
-<?php include 'docs/Pages/formation.php'; ?>
-<?php include 'docs/Pages/realisation.php'; ?>
-<?php include 'docs/Pages/contact.php'; ?>
+<?php include 'Pages/accueil.php'; ?>
+<?php include 'Pages/competences.php'; ?>
+<?php include 'Pages/formation.php'; ?>
+<?php include 'Pages/realisation.php'; ?>
+<?php include 'Pages/contact.php'; ?>
 
 <footer>
     <p>&copy; <?php echo date("Y"); ?> Mon Portfolio</p>

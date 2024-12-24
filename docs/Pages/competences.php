@@ -1,7 +1,7 @@
 <?php
 
 // Charger le fichier YAML
-$data = yaml_parse_file('Data\Competences.yaml');
+$data = yaml_parse_file('Data/Competences.yaml');
 
 // Fonction pour obtenir la valeur du niveau en pourcentage
 function niveauToPercentage($niveau) {

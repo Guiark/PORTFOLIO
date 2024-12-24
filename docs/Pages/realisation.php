@@ -1,4 +1,9 @@
 <?php
+$data = yaml_parse_file('Data/Realisations.yaml');
+?>
+
+<section id="realisations">
+<?php
 
 // Simulation du contenu YAML sous forme de tableau PHP
 $realisations = [

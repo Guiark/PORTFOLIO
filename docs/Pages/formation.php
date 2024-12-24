@@ -1,6 +1,6 @@
 <?php 
 
-$data = yaml_parse_file('Data\Formation.yaml');
+$data = yaml_parse_file('Data/Formation.yaml');
 ?>
 
 <section id="formation">

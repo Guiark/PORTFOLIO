@@ -1,5 +1,4 @@
-<?php require_once __DIR__ . './yaml.php'; ?>
-
+<?php require_once __DIR__ . '/yaml.php'; ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -18,8 +17,6 @@
 </head>
 
 <body>
-   
-
     <header>
         <h1>Mon Portfolio</h1>
         <div class="menu-burger" onclick="toggleMenu()">&#9776;</div>
@@ -34,26 +31,25 @@
 
     <main>
         <section id="accueil" class="section">
-            <?php include_once('Pages/accueil.php'); ?>
+            <?php include_once __DIR__ . '/Pages/accueil.php'; ?>
         </section>
         <section id="competences" class="section">
-            <?php include_once('Pages/competences.php'); ?>
+            <?php include_once __DIR__ . '/Pages/competences.php'; ?>
         </section>
         <section id="formation" class="section">
-            <?php include_once('Pages/formation.php'); ?>
+            <?php include_once __DIR__ . '/Pages/formation.php'; ?>
         </section>
         <section id="realisations" class="section">
-            <?php include_once('Pages/realisation.php'); ?>
+            <?php include_once __DIR__ . '/Pages/realisation.php'; ?>
         </section>
         <section id="contact" class="section">
-            <?php include_once('Pages/contact.php'); ?>
+            <?php include_once __DIR__ . '/Pages/contact.php'; ?>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <?php echo date('Y'); ?> Porfolio Guillaume Lenormand Tous droits réservés.</p>
+        <p>&copy; <?php echo date('Y'); ?> Portfolio Guillaume Lenormand. Tous droits réservés.</p>
     </footer>
 </body>
 
 </html>
-

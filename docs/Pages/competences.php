@@ -2,7 +2,7 @@
 
 // Charger le fichier YAML
 $data = yaml_parse_file('Data/Competences.yaml');
-
+    <section id="competences">
 // Fonction pour obtenir la valeur du niveau en pourcentage
 function niveauToPercentage($niveau) {
     switch($niveau) {
@@ -59,3 +59,4 @@ function afficherBarreProgression($categorie, $niveau) {
 <hr/>
 </body>
 </html>
+</section>

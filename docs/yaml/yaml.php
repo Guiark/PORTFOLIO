@@ -21,4 +21,4 @@ function print_array($data){
     print_r($data);
     echo "</pre>";
 }
-?
+?>

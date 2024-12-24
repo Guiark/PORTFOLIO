@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-require_once("yaml.php");
+require_once("vendor/synfony/yaml/Yaml.php");
 ?>
 
 <header>

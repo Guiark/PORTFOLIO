@@ -23,11 +23,11 @@ require_once("yaml/yaml.php");
 </header>
 
 
-<?php include 'PHP/accueil.php'; ?>
-<?php include 'PHP/competences.php'; ?>
-<?php include 'PHP/formation.php'; ?>
-<?php include 'PHP/realisation.php'; ?>
-<?php include 'PHP/contact.php'; ?>
+<?php include 'Pages/accueil.php'; ?>
+<?php include 'Pages/competences.php'; ?>
+<?php include 'Pages/formation.php'; ?>
+<?php include 'Pages/realisation.php'; ?>
+<?php include 'Pages/contact.php'; ?>
 
 <footer>
     <p>&copy; <?php echo date("Y"); ?> Mon Portfolio</p>

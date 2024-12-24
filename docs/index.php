@@ -17,7 +17,7 @@
 </head>
 
 <body>
-<?php require_once("yaml.php");?>
+<?php require_once("/yaml/yaml.php");?>
 
     <header>
         <h1>Mon Portfolio</h1>

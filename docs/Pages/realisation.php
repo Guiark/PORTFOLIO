@@ -1,5 +1,5 @@
 <?php
-
+use Symfony\Component\Yaml\Yaml;
 // Simulation du contenu YAML sous forme de tableau PHP
 $realisations = [
     [

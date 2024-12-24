@@ -1,4 +1,5 @@
 <?php 
+use Symfony\Component\Yaml\Yaml;
 $data = yaml_parse_file('Data\Formation.yaml');
 ?>
 

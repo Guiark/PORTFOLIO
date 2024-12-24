@@ -1,4 +1,4 @@
-<?php require_once("yaml/yaml.php");?>
+<?php require_once _DIR_ .'/yaml/yaml.php';?>
 
 <!DOCTYPE html>
 <html lang="fr">

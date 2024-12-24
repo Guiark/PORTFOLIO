@@ -1,4 +1,4 @@
-<?php require_once("yaml.php");?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -17,7 +17,7 @@
 </head>
 
 <body>
-   
+<?php require_once("yaml.php");?>
 
     <header>
         <h1>Mon Portfolio</h1>

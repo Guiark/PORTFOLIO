@@ -8,7 +8,7 @@ $data = yaml_parse_file('Data/Accueil.yaml');
     <p><?php echo htmlspecialchars($data['prenom']); ?></p>
     <p><?php echo htmlspecialchars($data['description']); ?></p>
     <p>
-        <img src="<?php echo htmlspecialchars($data['image']); ?>" alt="Illustration" class="responsive-img">
+        <img src="<?php echo htmlspecialchars($data['Images']); ?>" alt="Illustration" class="responsive-img">
     </p>
 </section>
 <hr/>

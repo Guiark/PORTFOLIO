@@ -23,6 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $recaptchaSecret = '6LdxUKQqAAAAALDfYBYkqL8UT9_IutVePEg8JM6O';
     $recaptchaResponse = $_POST['g-recaptcha-response'];
 
+    if (!$recaptchaResponse) {
+        $errors[] = 'La vérification CAPTCHA est requise.';
+    }
+
     $recaptchaVerification = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$recaptchaSecret&response=$recaptchaResponse");
     $recaptchaData = json_decode($recaptchaVerification);
 

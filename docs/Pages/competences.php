@@ -1,17 +1,12 @@
 <?php
+$data = yaml_parse_file('Data/Competences.yaml') ?? [];
 
-// Charger le fichier YAML
-$data = yaml_parse_file('Data/Competences.yaml');
-    <section id="competences">
 // Fonction pour obtenir la valeur du niveau en pourcentage
 function niveauToPercentage($niveau) {
     switch($niveau) {
-        case 'Nouveau':
-            return 10;
-        case 'Intermédiaire':
-            return 50;
-        default:
-            return 0;
+        case 'Nouveau': return 10;
+        case 'Intermédiaire': return 50;
+        default: return 0;
     }
 }
 
@@ -23,30 +18,11 @@ function afficherBarreProgression($categorie, $niveau) {
     echo "</div>";
     echo "<p>$niveau - $percentage% de progression</p><br>";
 }
-
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barre de Progression par Catégorie</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .category {
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-<body>
-
+<section id="competences">
     <h1>État des Compétences</h1>
-    
     <?php
-    // Affichage des barres de progression pour chaque catégorie
     foreach ($data as $categorie => $technologies) {
         echo "<div class='category'>";
         echo "<h2>" . ucfirst($categorie) . "</h2>";
@@ -56,7 +32,5 @@ function afficherBarreProgression($categorie, $niveau) {
         echo "</div>";
     }
     ?>
-<hr/>
-</body>
-</html>
 </section>
+<hr/>

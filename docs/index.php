@@ -23,11 +23,11 @@ require_once("vendor/symfony/yaml/Yaml.php");
 </header>
 
 
-<?php include 'Pages/accueil.php'; ?>
-<?php include 'Pages/competences.php'; ?>
-<?php include 'Pages/formation.php'; ?>
-<?php include 'Pages/realisation.php'; ?>
-<?php include 'Pages/contact.php'; ?>
+<?php include_once 'Pages/accueil.php'; ?>
+<?php include_once 'Pages/competences.php'; ?>
+<?php include_once 'Pages/formation.php'; ?>
+<?php include_once 'Pages/realisation.php'; ?>
+<?php include_once 'Pages/contact.php'; ?>
 
 <footer>
     <p>&copy; <?php echo date("Y"); ?> Mon Portfolio</p>

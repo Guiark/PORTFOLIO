@@ -1,0 +1,65 @@
+1. Palette de Couleurs :
+Les couleurs choisies sont principalement des tons vibrants de rouge, rose, bleu et des nuances de noir, afin de créer un contraste et d'ajouter de la profondeur.
+
+Couleur de fond dégradée :
+
+Dégradé du rouge vers le bleu :
+#ff4e00 (rouge vif)
+#ff0099 (rouge-rose)
+#0033cc (bleu profond)
+Couleurs de texte :
+
+Texte principal : #000000 (noir) — utilisé pour le texte de base dans le corps du site.
+Texte secondaire : #f0f0f0 (gris clair) — utilisé pour les paragraphes afin d'améliorer le contraste sur le fond sombre.
+Titres et éléments de navigation : #ffffff (blanc) — utilisé pour les titres et les liens dans la navigation pour garantir un contraste élevé.
+Couleur au survol des liens : #f0a500 (rouge ocre) — utilisé pour l'effet au survol des liens de navigation.
+Fond des sections :
+
+#000000 (noir avec opacité 0.7) pour créer des arrière-plans semi-transparents, ajoutant ainsi de la profondeur et permettant de garder la lisibilité sur le fond dégradé.
+2. Typographie :
+La typographie est simple et moderne, axée sur la lisibilité, avec une police sans-serif pour le corps du texte et des titres en gras pour renforcer l'impact visuel.
+
+Police principale :
+
+Nom de la police : Arial, sans-serif
+Usage : Utilisée dans tout le site pour garantir la lisibilité.
+Poids : Normal pour le texte du corps et gras pour les titres principaux.
+Hiérarchie des titres :
+
+H1 (Titre principal) : 3rem, blanc, ombré avec une ombre portée pour améliorer la lisibilité sur le fond dégradé.
+H2 (Sous-titres des sections) : 2rem, blanc, ombré pour plus de visibilité.
+Paragraphe : 1.2rem, gris clair (#f0f0f0), texte normal avec un léger ombrage pour le contraste.
+3. Composants UI (Interface Utilisateur) :
+Les éléments d'interface sont simples, avec un design minimaliste qui se concentre sur la navigation et la hiérarchie du contenu. L'objectif est de rendre l'expérience utilisateur agréable tout en assurant la lisibilité du contenu.
+
+En-tête (Header) :
+
+Fond : rgba(0, 0, 0, 0.7) — un fond noir semi-transparent pour l'en-tête, avec une couleur de texte en blanc.
+Liens de navigation :
+Texte : blanc, avec un effet de survol en #f0a500 (rouge ocre).
+Hover : Les liens deviennent plus visibles avec un changement de couleur au survol, créant un effet interactif.
+Sections :
+
+Fond : rgba(0, 0, 0, 0.7) — fond noir semi-transparent pour chaque section afin de s'assurer que le texte reste lisible sur le fond dégradé dynamique.
+Texte des sections : blanc pour les titres et gris clair pour les paragraphes.
+Bordures arrondies : Les sections ont des bords arrondis (border-radius: 8px) pour un aspect moderne et doux.
+Pied de page (Footer) :
+
+Fond : rgba(0, 0, 0, 0.7) — identique à l'en-tête pour créer une continuité visuelle.
+Texte : blanc, centré et de taille modérée pour assurer que les informations importantes sont visibles sans être envahissantes.
+4. Espacements et Disposition :
+L'espacement a été conçu pour que le contenu soit aéré et bien organisé, permettant une navigation fluide sur le site.
+
+Espacement général :
+Marge : margin: 30px 0 pour les sections, créant des espaces adéquats entre les différents blocs.
+Padding : padding: 50px 20px pour les sections pour garantir que le contenu n'est pas trop proche des bords.
+Alignement du texte :
+Le texte est centré grâce à text-align: center;, ce qui est particulièrement important pour les titres et les liens de navigation.
+Les sections sont organisées pour être affichées dans un format en colonnes (flex-direction: column;), et les éléments sont centrés horizontalement et alignés en haut (align-items: center; justify-content: flex-start;).
+5. Comportement sur Mobile :
+Le site a été conçu pour être réactif (responsive), ce qui garantit une bonne expérience utilisateur sur les appareils mobiles.
+
+Modification de la largeur des sections :
+Sur des écrans plus petits (moins de 768px de large), les sections prennent toute la largeur de l'écran (width: 100%), ce qui améliore l'accessibilité du contenu.
+Padding ajusté :
+Un peu de padding est ajouté autour du corps pour éviter que le contenu ne touche les bords sur les petits appareils (padding: 0 20px).

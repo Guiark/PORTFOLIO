@@ -1,190 +1,96 @@
-/* --- Thème Général --- */
-body {
+/* Global reset */
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  color: #333333;  /* Gris foncé pour le texte */
-  background-color: #f4f4f4;  /* Fond neutre clair */
-  scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
-/* --- En-tête --- */
-header {
-  background: rgba(255, 255, 255, 0.9);  /* Fond blanc transparent */
+/* Apply gradient from red to blue */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff4e00, #ff0099, #0033cc); /* Dégradé du rouge vers le bleu */
+  color: #000; /* Texte en noir */
+  line-height: 1.6;
+  text-align: center; /* Center all text horizontally */
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Ombre légère */
-  border-bottom: 1px solid #e0e0e0;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: flex-start; /* Align content from top */
+  min-height: 100vh; /* Ensure body takes full height */
+}
+
+/* Header styles */
+header {
+  background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent noir */
+  padding: 20px;
+  width: 100%;
+  color: #fff; /* Texte en blanc dans l'en-tête */
 }
 
 header h1 {
-  font-size: 2em;
-  margin: 0;
-  color: #333333;
-  font-weight: 700;
-}
-
-nav {
-  display: flex;
-  gap: 25px;
-}
-
-nav a {
-  color: #333333;
-  text-decoration: none;
-  font-size: 1em;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #007bff;  /* Touche de bleu pour l'interaction */
-}
-
-/* --- Menu Burger --- */
-.menu-burger {
-  display: none;
-  font-size: 2em;
-  cursor: pointer;
-  color: #333333;
-}
-
-/* --- Sections --- */
-.section {
-  padding: 80px 50px;
-  text-align: center;
-  background: #ffffff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);  /* Ombre discrète */
-  margin: 20px auto;
-  max-width: 1000px;
-  position: relative;
-  border-radius: 10px;
-}
-
-.section h2 {
-  font-size: 2.2em;
-  color: #333333;
+  font-size: 3rem;
+  color: #fff; /* Texte en blanc */
   margin-bottom: 20px;
-  font-weight: 600;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Ombre pour le titre */
 }
 
-/* --- Pied de Page --- */
-footer {
-  background: #ffffff;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  margin-top: 50px;
-  border-top: 1px solid #e0e0e0;
-  color: #666666;  /* Gris clair pour le texte */
+header nav {
+  margin-top: 10px;
 }
 
-/* --- Responsive --- */
-@media (max-width: 768px) {
-  header {
-    padding: 15px 20px;
-  }
-
-  nav {
-    display: none;
-    flex-direction: column;
-    gap: 20px;
-    background: rgba(255, 255, 255, 0.95);
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    padding: 20px 0;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  .menu-burger {
-    display: block;
-  }
-
-  .section {
-    padding: 50px 20px;
-  }
+header nav a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-@media (max-width: 1024px) {
-  header {
-    padding: 15px 30px;
-  }
-
-  nav a {
-    font-size: 0.9em;
-  }
+header nav a:hover {
+  color: #f0a500; /* Rouge ocre au survol */
 }
 
-/* --- Images Adaptatives --- */
-.image-container {
-  width: 100%;
-  max-width: 800px;
-  margin: 20px auto;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Ombre discrète */
-}
-
-.image-container img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-  border-radius: 10px;
-}
-
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  margin: 20px auto;
-}
-
-.image-grid img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+/* Sections */
+section {
+  width: 80%; /* Limit width for better readability */
+  padding: 50px 20px;
+  margin: 30px 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent noir foncé pour plus de contraste */
   border-radius: 8px;
 }
 
+section h2 {
+  color: #fff; /* Texte des titres en blanc */
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Ombre pour les titres */
+}
+
+section p {
+  color: #f0f0f0; /* Texte en gris clair pour plus de contraste */
+  font-size: 1.2rem;
+  margin-top: 10px;
+  line-height: 1.6;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Ombre légère pour le texte */
+}
+
+/* Footer */
+footer {
+  background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent noir */
+  color: #fff; /* Texte en blanc dans le pied de page */
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+/* Responsive design adjustments for smaller screens */
 @media (max-width: 768px) {
-  .image-container {
-    max-width: 100%;
+  body {
+      padding: 0 20px;
   }
-
-  .image-grid img {
-    height: 150px;
-  }
-}
-
-@media (max-width: 480px) {
-  .image-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .image-grid img {
-    height: 120px;
-  }
-}
-
-.responsive-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-  .responsive-img {
-    max-width: 90%;
+  section {
+      width: 100%; /* Take full width on small screens */
   }
 }
